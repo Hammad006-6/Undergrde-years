@@ -1,7 +1,54 @@
 # Undergrde-years
 This is my first GitHub repository.
 # First Semester University Life Simulator
-The first semester of university life is a transformative transition from the structured world of school to the independent environment of higher education. It begins with the high energy of Orientation Week, where the campus is filled with "societies" and clubs recruiting new members, and students are introduced to the vast halls of Shivaji College. During these early months, the lifestyle shifts dramatically as you balance a new academic workload—juggling complex subjects like Physics and Programming Fundamentals—with the social freedom of campus hangouts. The "honeymoon phase" of the semester usually ends abruptly with the arrival of weekly quizzes and the intense pressure of mid-term exams, which turn the university library into a second home filled with late-night study sessions and endless coffee.
+# First Semester University Life Simulator
+import random
 
-However, it isn't all about the "academic grind." The middle of the semester often brings the excitement of Sports Day and cultural fests, where the competitive spirit moves from the classroom to the field. Whether you are participating in a relay race or cheering from the stands, these events provide a much-needed break from the books. As the temperature shifts and the "winter/spring transition" sets in, the focus narrows toward final projects and the high-stakes final exams. Navigating your first semester is a balancing act: learning to manage your own time, surviving the stress of "mids," and ultimately building the foundational logic and friendships that will define the rest of your degree.
+def simulate_semester():
+    # 1. Setting up the environment (The "World")
+    semester_data = {
+        "university": "Shivaji College",
+        "season": "Winter/Spring Transition",
+        "avg_temperature": 22,  # in Celsius
+        "subjects": ["Physics", "Mathematics", "Programming Fundamentals", "English"],
+        "status": "Active"
+    }
+
+    print(f"--- Welcome to First Semester at {semester_data['university']} ---")
+    print(f"Current Weather: {semester_data['avg_temperature']}°C. Perfect for campus life.\n")
+
+    # 2. The Academic Cycle (Using a List of Events)
+    events = [
+        "Orientation & Society Sign-ups",
+        "Weekly Quizzes (The Struggle Begins)",
+        "Mid-Term Exams week",
+        "Sports Day & Cultural Fest",
+        "Final Project Submissions",
+        "Final Exams (The Grand Finale)"
+    ]
+
+    # 3. Simulating the Life Flow
+    for week, event in enumerate(events, 1):
+        print(f"Week {week}: {event}")
+        
+        # Adding some logic for specific events
+        if "Quizzes" in event:
+            score = random.randint(70, 95)
+            print(f"   > Result: You scored {score}% in your Programming Quiz!")
+        
+        elif "Mid-Term" in event:
+            print("   > Life Status: Late nights, heavy coffee, and library sessions.")
+        
+        elif "Sports Day" in event:
+            temp_rise = semester_data['avg_temperature'] + 5
+            print(f"   > Activity: Out on the field! It's {temp_rise}°C today.")
+            print("   > Victory: You participated in the relay race!")
+            
+        elif "Final Exams" in event:
+            print("   > Result: All subjects cleared! Time for semester break.")
+
+    print("\n--- Semester 1 Complete! ---")
+
+if __name__ == "__main__":
+    simulate_semester()
           
